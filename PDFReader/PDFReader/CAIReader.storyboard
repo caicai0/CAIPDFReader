@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Container View Controller-->
+        <scene sceneID="u7Q-eI-rj0">
+            <objects>
+                <viewController storyboardIdentifier="CAIContainerViewController" id="EgA-Ra-yAl" customClass="CAIContainerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f9m-ri-jXk"/>
+                        <viewControllerLayoutGuide type="bottom" id="TDl-Mk-cRW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rUx-D3-sK0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpL-kQ-5s2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="Pqr-mS-UxS" kind="embed" identifier="CAIPageViewController" id="eyb-mZ-VTL"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jpL-kQ-5s2" secondAttribute="trailing" id="EeI-i1-VOw"/>
+                            <constraint firstItem="jpL-kQ-5s2" firstAttribute="top" secondItem="rUx-D3-sK0" secondAttribute="top" id="TfW-qK-P5j"/>
+                            <constraint firstItem="TDl-Mk-cRW" firstAttribute="top" secondItem="jpL-kQ-5s2" secondAttribute="bottom" id="oXJ-51-zkA"/>
+                            <constraint firstItem="jpL-kQ-5s2" firstAttribute="leading" secondItem="rUx-D3-sK0" secondAttribute="leading" id="zrg-NB-ycs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egq-vJ-NAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="452"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="5I6-Kq-jfi">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Pqr-mS-UxS" customClass="CAIPageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xcq-q7-jg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="452"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="Yb3-Sp-Mfz">
+            <objects>
+                <viewController storyboardIdentifier="CAIPageContentViewController" id="fnN-Jy-6z7" customClass="CAIPageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wEI-7q-T5Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mg2-7M-UCe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mva-VK-erP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHe-fd-ucU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKV-wk-NbQ" customClass="CAIPdfView">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="lQP-Iz-RRN"/>
+                                            <constraint firstAttribute="height" constant="300" id="u3e-LL-4fT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DKV-wk-NbQ" firstAttribute="leading" secondItem="VHe-fd-ucU" secondAttribute="leading" id="90R-JS-9FB"/>
+                                    <constraint firstAttribute="bottom" secondItem="DKV-wk-NbQ" secondAttribute="bottom" id="CLd-7h-Z8D"/>
+                                    <constraint firstItem="DKV-wk-NbQ" firstAttribute="top" secondItem="VHe-fd-ucU" secondAttribute="top" id="XeF-7f-UYd"/>
+                                    <constraint firstAttribute="trailing" secondItem="DKV-wk-NbQ" secondAttribute="trailing" id="w9S-UW-uCl"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhz-Tv-GkQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LF9-yL-Eru">
+                                        <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                        <state key="normal" title="返回">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fwV-SX-HQz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VHe-fd-ucU" secondAttribute="trailing" id="5g7-Zn-y2z"/>
+                            <constraint firstAttribute="trailing" secondItem="vhz-Tv-GkQ" secondAttribute="trailing" id="6Uh-iP-aNG"/>
+                            <constraint firstItem="VHe-fd-ucU" firstAttribute="top" secondItem="mva-VK-erP" secondAttribute="top" id="99E-0Q-nEI"/>
+                            <constraint firstItem="Mg2-7M-UCe" firstAttribute="top" secondItem="VHe-fd-ucU" secondAttribute="bottom" id="X4W-9J-l7F"/>
+                            <constraint firstItem="vhz-Tv-GkQ" firstAttribute="leading" secondItem="mva-VK-erP" secondAttribute="leading" id="aQP-mC-owe"/>
+                            <constraint firstItem="VHe-fd-ucU" firstAttribute="leading" secondItem="mva-VK-erP" secondAttribute="leading" id="m1I-UL-6XN"/>
+                            <constraint firstItem="vhz-Tv-GkQ" firstAttribute="top" secondItem="mva-VK-erP" secondAttribute="top" id="qd2-7L-PtL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentHeight" destination="u3e-LL-4fT" id="z53-mh-tUC"/>
+                        <outlet property="contentWith" destination="lQP-Iz-RRN" id="DFb-gY-xVS"/>
+                        <outlet property="pdfView" destination="DKV-wk-NbQ" id="OAv-Ch-LDT"/>
+                        <outlet property="scrollView" destination="VHe-fd-ucU" id="dTr-SL-4BJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VcY-X1-ljV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2126" y="452"/>
+        </scene>
+    </scenes>
+</document>
